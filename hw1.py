@@ -28,23 +28,10 @@ with open(cwb_filename) as csvfile:
 #target_data={'C0A880':'PRESS','C0F9A0':'PRESS','C0G640':'PRESS','C0R190':'PRESS','C0X260':'PRESS'}
 Press = 0
 time = 0
-#for i in range(len(data)):
-#   print(i)
-#   if data[i]['PRESS']=='-99.000' or data[i]['PRESS']=='-999.000':
-#      del data[i] 
+
 
 res = [i for i in data if not ((i['PRES'] == '-99.000')|(i['PRES'] == '-999.000'))] 
-#print(res)
-#for i in range(len(data)):
-#   print(data[i]['station_id'])
-#print(data[11])
 
-#for i in range(len(data)):
-##   if data[i]['station_id']=='C0A880':
-#      time_C0A880 = 1
-#      Press = Press + float(data[i]['PRESS'])
-#target_data['C0A880']=Press     
-#=======================================
 target_data =[]
 target_C0A880 = list(filter(lambda item: item['station_id'] == 'C0A880', res))
 target_C0F9A0 = list(filter(lambda item: item['station_id'] == 'C0F9A0', res))
@@ -111,18 +98,7 @@ else:
 
 # Part. 4
 #=======================================
-# Print result
-#print(target_C0A880[1])
-#print(target_C0F9A0)
-#print(target_C0G640)
-#print(target_C0R190)
-#print(target_C0X260)
-#print(target_data[1])
-#print('[')
-#for i in range(len(target_data)):
-#   print('[')
-#   print(target_data[i])
-#   print(']')
+
 print('[', end='')
 for i in range(len(target_data)):
    if i % 2 == 0: 
@@ -137,5 +113,4 @@ for i in range(len(target_data)):
       if i != len(target_data)-1:
          print(',',end='')
 print(']')
-#print(']')
 #========================================
