@@ -25,7 +25,7 @@ with open(cwb_filename) as csvfile:
 # target_data = list(filter(lambda item: item['station_id'] == 'C0X260', data))
 
 # Retrive ten data points from the beginning.
-#target_data={'C0A880':'PRESS','C0F9A0':'PRESS','C0G640':'PRESS','C0R190':'PRESS','C0X260':'PRESS'}
+
 Press = 0
 time = 0
 
